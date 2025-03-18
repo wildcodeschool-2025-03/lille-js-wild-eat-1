@@ -1,0 +1,85 @@
+:root {
+  --mainColor: #f7146b;
+  --secondaryColor: #fef3f9;
+  --black: #1d1d1b;
+  --white: #fff;
+  --spacingSmall: 1rem;
+  --spacingMedium: 2rem;
+  --spacingLarge: 4rem;
+}
+
+.container {
+  padding: var(--spacingMedium);
+  display: flex;
+  flex-direction: column;
+}
+
+.filterSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.filterSection h2 {
+  text-align: center;
+  color: var(--mainColor);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.filterSection p {
+  text-align: center;
+}
+
+.filterList {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacingSmall);
+  gap: var(--spacingSmall);
+}
+
+.filterBtn {
+  height: 40px;
+  width: 100px;
+  background-color: var(--secondaryColor);
+  border: 2px solid var(--mainColor);
+  color: var(--black);
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.filterBtn:hover {
+  background-color: var(--mainColor);
+  color: var(--white);
+}
+
+.resetBtn {
+  margin: 1rem auto 0;
+  padding: 5px 10px;
+  border: 2px solid var(--black);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.resetBtn:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.restaurantsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacingSmall);
+  padding-top: var(--spacingMedium);
+}
+
+.restaurantCard {
+  width: 200px;
+  height: 300px;
+  border: 2px solid var(--black);
+  border-radius: 5px;
+  padding: var(--spacingSmall);
+}

@@ -6,19 +6,27 @@ const createRestaurantCard = (restaurant) => {
   const restaurantCard = document.createElement("li");
   restaurantCard.classList.add("restaurantCard");
   restaurantsContainer.appendChild(restaurantCard);
+  const imgContainer = document.createElement("div");
+  imgContainer.classList.add("imgContainer");
+  restaurantCard.appendChild(imgContainer);
   const restaurantImg = document.createElement("img");
-  restaurantImg.classList.add("restaurantImg");
   restaurantImg.src = `${restaurant.img}`;
   restaurantImg.alt = `Illustration du restaurant ${restaurant.name}`;
-  restaurantCard.appendChild(restaurantImg);
+  imgContainer.appendChild(restaurantImg);
   const restaurantName = document.createElement("h3");
-  restaurantName.classList.add("restaurantName");
   restaurantName.innerText = `${restaurant.name}`;
   restaurantCard.appendChild(restaurantName);
+  const restaurantCategory = document.createElement("p");
+  restaurantCategory.innerText = `Ce restaurant propose des plats: ${restaurant.category.join(
+    ", "
+  )}`;
+  restaurantCard.appendChild(restaurantCategory);
   const restaurantHours = document.createElement("p");
-  restaurantHours.classList.add("restaurantHours");
   restaurantHours.innerText = `Horaires : ${restaurant.hours}`;
   restaurantCard.appendChild(restaurantHours);
+  const restaurantBtn = document.createElement("button");
+  restaurantBtn.innerHTML = `<a href="${restaurant.website}" target="_blank">Voir le site web</a>`;
+  restaurantCard.appendChild(restaurantBtn);
   return restaurantCard;
 };
 
@@ -32,7 +40,7 @@ displayRestaurantsCards(restaurants);
 
 // Code used to filter the restaurants and display only the veggie ones when the button is clicked
 const veggieRestaurants = restaurants.filter((restaurant) =>
-  restaurant.category.includes("veggie")
+  restaurant.category.includes("Veggie")
 );
 const veggieBtn = document.querySelector("#veggieBtn");
 veggieBtn.addEventListener("click", () => {
@@ -41,7 +49,7 @@ veggieBtn.addEventListener("click", () => {
 
 // Code used to filter the restaurants and display only the asian ones when the button is clicked
 const asianRestaurants = restaurants.filter((restaurant) =>
-  restaurant.category.includes("asian")
+  restaurant.category.includes("Asian")
 );
 const asianBtn = document.querySelector("#asianBtn");
 asianBtn.addEventListener("click", () => {
@@ -50,7 +58,7 @@ asianBtn.addEventListener("click", () => {
 
 // Code used to filter the restaurants and display only the burger ones when the button is clicked
 const burgerRestaurants = restaurants.filter((restaurant) =>
-  restaurant.category.includes("burger")
+  restaurant.category.includes("Burger")
 );
 const burgerBtn = document.querySelector("#burgerBtn");
 burgerBtn.addEventListener("click", () => {
@@ -59,7 +67,7 @@ burgerBtn.addEventListener("click", () => {
 
 // Code used to filter the restaurants and display only the halal ones when the button is clicked
 const halalRestaurants = restaurants.filter((restaurant) =>
-  restaurant.category.includes("halal")
+  restaurant.category.includes("Halal")
 );
 const halalBtn = document.querySelector("#halalBtn");
 halalBtn.addEventListener("click", () => {

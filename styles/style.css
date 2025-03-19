@@ -1,0 +1,127 @@
+:root {
+    --mainColor: #099a57;
+    --secondaryColor: #fef3f9;
+    --black: #1d1d1b;
+    --white: #fff;
+}
+
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainColor);
+    width: 100%;
+
+
+}
+
+.menu {
+    display: none;
+}
+
+.banner ul {
+    display: flex;
+    width: auto;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+
+.banner h1 {
+    margin: 0 auto;
+    color: var(--white);
+    text-align: center;
+}
+
+
+
+.footerClass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--mainColor);
+    color: white;
+    text-align: center;
+}
+
+.footerClass div {
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.footerClass img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.footerClass p {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .banner {
+        display: flex;
+        align-items: center;
+        background-color: var(--mainColor);
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    .menu-burger {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 3vh;
+        height: 3vh;
+        background-color: var(--white);
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.5rem;
+        margin-left: 0;
+    }
+
+    .banner h1 {
+        text-align: center;
+        color: var(--white);
+    }
+
+    .menu {
+        display: none;
+        left: 0;
+        background-color: var(--mainColor);
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .footerClass {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .footerClass div {
+        margin: 0.5vh;
+    }
+
+    .footerClass img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .footerClass p {
+        width: 100%;
+        margin-top: 1vh;
+        font-size: 0.5rem;
+    }
+}

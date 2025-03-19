@@ -22,6 +22,10 @@ h6 {
   font-family: var(--titleFont);
 }
 
+.italic {
+  font-style: italic;
+}
+
 .container {
   padding: var(--spacingMedium);
   min-height: 100vh;
@@ -65,7 +69,7 @@ h6 {
 .filterBtn {
   height: 40px;
   width: 100px;
-  background-color: transparent;
+  background: rgba(255, 255, 255, 0.2);
   border: 2px solid var(--mainColor);
   color: var(--mainColor);
   border-radius: 5px;
@@ -83,14 +87,16 @@ h6 {
   margin: 1rem auto 0;
   padding: 5px 10px;
   border: 2px solid var(--black);
+  background: var(--black);
+  color: var(--white);
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
 
 .resetBtn:hover {
-  background: var(--black);
-  color: var(--white);
+  background: transparent;
+  color: var(--black);
 }
 
 .restaurantsContainer {
@@ -107,6 +113,7 @@ h6 {
   width: 250px;
   height: 380px;
   border: 2px solid var(--black);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   padding: var(--spacingSmall);
 
@@ -114,11 +121,15 @@ h6 {
     max-width: 100%;
     height: 180px;
     overflow: hidden;
+    border-radius: 5px;
 
     img {
       min-width: 100%;
       min-height: 100%;
-      border-radius: 2px;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 
@@ -147,5 +158,11 @@ h6 {
       background: var(--secondaryColor);
       border: 2px solid var(--secondaryColor);
     }
+  }
+}
+
+@media screen and (max-width: 547px) {
+  .container {
+    padding: var(--spacingMedium) var(--spacingSmall);
   }
 }

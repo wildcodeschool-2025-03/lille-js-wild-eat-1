@@ -69,7 +69,7 @@ h6 {
 .filterBtn {
   height: 40px;
   width: 100px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
   border: 2px solid var(--mainColor);
   color: var(--mainColor);
   border-radius: 5px;
@@ -79,6 +79,11 @@ h6 {
 }
 
 .filterBtn:hover {
+  background-color: var(--mainColor);
+  color: var(--white);
+}
+
+.active {
   background-color: var(--mainColor);
   color: var(--white);
 }
@@ -99,6 +104,11 @@ h6 {
   color: var(--black);
 }
 
+.restaurantsSection h3 {
+  text-align: center;
+  margin-top: var(--spacingMedium);
+}
+
 .restaurantsContainer {
   display: flex;
   flex-wrap: wrap;
@@ -113,7 +123,7 @@ h6 {
   width: 250px;
   height: 380px;
   border: 2px solid var(--black);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 5px;
   padding: var(--spacingSmall);
 
@@ -133,7 +143,7 @@ h6 {
     }
   }
 
-  h3 {
+  h4 {
     color: var(--mainColor);
     font-weight: 700;
     margin: 8px 0;
@@ -145,7 +155,6 @@ h6 {
 
   button {
     width: 100%;
-    padding: 8px;
     background: var(--mainColor);
     color: var(--white);
     border-radius: 5px;
@@ -157,6 +166,13 @@ h6 {
     &:hover {
       background: var(--secondaryColor);
       border: 2px solid var(--secondaryColor);
+    }
+
+    a {
+      padding: 8px;
+      display: block;
+      width: 100%;
+      height: 100%;
     }
   }
 }

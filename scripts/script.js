@@ -15,7 +15,7 @@ const createRestaurantCard = (restaurant) => {
     : "img/restaurantImgPlaceholder.webp";
   restaurantImg.alt = `Illustration du restaurant ${restaurant.name}`;
   imgContainer.appendChild(restaurantImg);
-  const restaurantName = document.createElement("h3");
+  const restaurantName = document.createElement("h4");
   restaurantName.innerText = `${restaurant.name}`;
   restaurantCard.appendChild(restaurantName);
   const restaurantCategory = document.createElement("p");
@@ -40,12 +40,21 @@ const displayRestaurantsCards = (restaurants) => {
 
 displayRestaurantsCards(restaurants);
 
+// Code used to show the number of restaurants available
+const nbRestaurants = document.querySelector(".nbRestaurants");
+nbRestaurants.innerText = restaurants.length;
+
 // Code used to filter the restaurants and display only the veggie ones when the button is clicked
 const veggieRestaurants = restaurants.filter((restaurant) =>
   restaurant.category.includes("Végétarien")
 );
 const veggieBtn = document.querySelector("#veggieBtn");
 veggieBtn.addEventListener("click", () => {
+  veggieBtn.classList.add("active");
+  asianBtn.classList.remove("active");
+  burgerBtn.classList.remove("active");
+  halalBtn.classList.remove("active");
+  nbRestaurants.innerText = veggieRestaurants.length;
   displayRestaurantsCards(veggieRestaurants);
 });
 
@@ -55,6 +64,11 @@ const asianRestaurants = restaurants.filter((restaurant) =>
 );
 const asianBtn = document.querySelector("#asianBtn");
 asianBtn.addEventListener("click", () => {
+  asianBtn.classList.add("active");
+  veggieBtn.classList.remove("active");
+  burgerBtn.classList.remove("active");
+  halalBtn.classList.remove("active");
+  nbRestaurants.innerText = asianRestaurants.length;
   displayRestaurantsCards(asianRestaurants);
 });
 
@@ -64,6 +78,11 @@ const burgerRestaurants = restaurants.filter((restaurant) =>
 );
 const burgerBtn = document.querySelector("#burgerBtn");
 burgerBtn.addEventListener("click", () => {
+  burgerBtn.classList.add("active");
+  veggieBtn.classList.remove("active");
+  asianBtn.classList.remove("active");
+  halalBtn.classList.remove("active");
+  nbRestaurants.innerText = burgerRestaurants.length;
   displayRestaurantsCards(burgerRestaurants);
 });
 
@@ -73,11 +92,21 @@ const halalRestaurants = restaurants.filter((restaurant) =>
 );
 const halalBtn = document.querySelector("#halalBtn");
 halalBtn.addEventListener("click", () => {
+  halalBtn.classList.add("active");
+  veggieBtn.classList.remove("active");
+  asianBtn.classList.remove("active");
+  burgerBtn.classList.remove("active");
+  nbRestaurants.innerText = halalRestaurants.length;
   displayRestaurantsCards(halalRestaurants);
 });
 
 // Code used to reset the filters and display all the restaurants
 const resetBtn = document.querySelector(".resetBtn");
 resetBtn.addEventListener("click", () => {
+  veggieBtn.classList.remove("active");
+  asianBtn.classList.remove("active");
+  burgerBtn.classList.remove("active");
+  halalBtn.classList.remove("active");
+  nbRestaurants.innerText = restaurants.length;
   displayRestaurantsCards(restaurants);
 });

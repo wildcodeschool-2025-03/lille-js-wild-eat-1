@@ -23,9 +23,11 @@ const createRestaurantCard = (restaurant) => {
     ", "
   )}</span>`;
   restaurantCard.appendChild(restaurantCategory);
-  const restaurantHours = document.createElement("p");
-  restaurantHours.innerText = `Horaires : ${restaurant.hours}`;
-  restaurantCard.appendChild(restaurantHours);
+  const restaurantServices = document.createElement("p");
+  restaurantServices.innerHTML = `Services : <span class="italic"> ${restaurant.services.join(
+    ", "
+  )}</span>`;
+  restaurantCard.appendChild(restaurantServices);
   const restaurantBtn = document.createElement("button");
   restaurantBtn.innerHTML = `<a href="${restaurant.website}" target="_blank">Voir le site web</a>`;
   restaurantCard.appendChild(restaurantBtn);

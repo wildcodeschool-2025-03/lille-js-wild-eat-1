@@ -118,6 +118,8 @@ const listBurger = document.querySelector(".menu-burger");
 
 burgerButton.addEventListener("click", () => {
   const newImage = document.querySelector(".imagebutton");
-  listBurger.classList.toggle("open")
-  newImage.src = "img/icons8-menu-64.png" ? "img/icons8-croix-50.png" : "img/icons8-menu-64.png";
+  listBurger.classList.toggle("open");
+  newImage.src = newImage.src.includes("img/icons8-menu-64.png")
+    ? "img/icons8-croix-50.png"
+    : "img/icons8-menu-64.png";
 });

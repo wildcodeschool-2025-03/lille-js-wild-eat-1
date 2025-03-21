@@ -265,7 +265,6 @@ h6 {
 /* MEDIA QUERIES POUR MOBILE */
 @media screen and (max-width: 600px) {
   /* NAVBAR MOBILE */
-  
 
   .navBar {
     position: absolute;
@@ -331,7 +330,7 @@ h6 {
     width: 6vh;
     height: 6vh;
   }
-  
+
   .footerClass p {
     font-size: 0.5rem;
     margin-top: 10px;
@@ -374,7 +373,5 @@ h6 {
   .footerClass p {
     text-align: center;
     margin-top: 0;
-
   }
 }
-

@@ -56,6 +56,101 @@
         <h3>Restaurants disponibles : <span class="nbRestaurants"></span></h3>
         <ul class="restaurantsContainer"></ul>
       </section>
+      <section class="formSection">
+        <h2>Ajouter un restaurant</h2>
+        <p>
+          Votre restaurant préféré n'est pas dans notre base de données?
+          Rajoutez le en remplissant ce formulaire:
+        </p>
+        <form action="post">
+          <label for="restaurantName">Nom du restaurant :</label>
+          <input
+            type="text"
+            id="restaurantName"
+            name="restaurantName"
+            placeholder="Nom du restaurant"
+          />
+          <fieldset>
+            <legend>Services du restaurant :</legend>
+            <label>
+              <input
+                type="checkbox"
+                name="restaurantServices[]"
+                value="Sur place"
+              />
+              Sur place
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="restaurantServices[]"
+                value="Livraison"
+              />
+              Livraison
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="restaurantServices[]"
+                value="A emporter"
+              />
+              A emporter
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Catégorie du restaurant :</legend>
+            <label>
+              <input
+                type="checkbox"
+                name="restaurantCategory[]"
+                value="Végétarien"
+              />
+              Végétarien
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="restaurantCategory[]"
+                value="Asiatique"
+              />
+              Asiatique
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="restaurantCategory[]"
+                value="Burger"
+              />
+              Burger
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="restaurantCategory[]"
+                value="Halal"
+              />
+              Halal
+            </label>
+          </fieldset>
+          <label for="restaurantWebsite">Site web du restaurant :</label>
+          <input
+            type="url"
+            id="restaurantWebsite"
+            name="restaurantWebsite"
+            placeholder="https://exemple.com"
+          />
+          <label for="restaurantIllustration"
+            >Illustration du restaurant :</label
+          >
+          <input
+            type="url"
+            id="restaurantIllustration"
+            name="restaurantIllustration"
+            placeholder="URL de l'image"
+          />
+          <button type="submit">Ajouter le restaurant</button>
+        </form>
+      </section>
     </main>
     <footer class="footerClass">
       <ul>

@@ -3,6 +3,9 @@
   --secondaryColor: #fef3f9;
   --black: #1d1d1b;
   --white: #fff;
+  --spacingSmall: 1rem;
+  --spacingMedium: 2rem;
+  --spacingLarge: 4rem;
 
 }
 

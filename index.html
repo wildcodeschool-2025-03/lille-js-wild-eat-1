@@ -4,36 +4,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wild Eats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="styles/reset.css" />
   <link rel="stylesheet" href="styles/style.css" />
+  <title>Wild Eats</title>
 </head>
 
 <body>
 
-  <nav class="navBar" id="navBar">
-
-    <ul class="menu-burger" id="menu-burger">
-      <li><a href="#">Tarifs</a></li>
-      <li><a href="#">Connexion</a></li>
-      <li><a href="#">Votre compte</a></li>
-    </ul>
-
-  </nav>
-
   <header class="banner">
 
+    <nav class="navBar" id="navBar">
+      <button class="classButton"><img class="imagebutton" src="img/icons8-menu-64.png" alt="bouton burger"></button>
+      <ul class="menu-burger" id="menu-burger">
+        <li><a href="#">Tarifs</a></li>
+        <li><a href="#">Connexion</a></li>
+        <li><a href="#">Votre compte</a></li>
+      </ul>
+
+    </nav>
     <h1>Wild Eats</h1>
 
 
   </header>
-
-  <main>
-
-
+  <main class="container">
+    <section class="filterSection">
+      <h2>Où vas-tu manger ce midi?</h2>
+      <p>
+        Notre site web répertorie les restaurants que tu pourras retrouver
+        autours du campus chaque midi!
+      </p>
+      <ul class="filterList">
+        <li><button class="filterBtn" id="veggieBtn">Végétarien</button></li>
+        <li><button class="filterBtn" id="asianBtn">Asiatique</button></li>
+        <li><button class="filterBtn" id="burgerBtn">Burger</button></li>
+        <li><button class="filterBtn" id="halalBtn">Halal</button></li>
+      </ul>
+      <button class="resetBtn">&times; Retirer les filtres</button>
+    </section>
+    <section class="restaurantsSection">
+      <h3>Restaurants disponibles : <span class="nbRestaurants"></span></h3>
+      <ul class="restaurantsContainer"></ul>
+    </section>
   </main>
-
-
   <footer class=footerClass>
     <ul>
 

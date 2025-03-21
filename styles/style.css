@@ -88,22 +88,6 @@ h6 {
   color: var(--white);
 }
 
-.resetBtn {
-  margin: 1rem auto 0;
-  padding: 5px 10px;
-  border: 2px solid var(--black);
-  background: var(--black);
-  color: var(--white);
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-
-.resetBtn:hover {
-  background: transparent;
-  color: var(--black);
-}
-
 .restaurantsSection h3 {
   text-align: center;
   margin-top: var(--spacingMedium);

@@ -1,5 +1,22 @@
-// The container that will contain the list of restaurants
 const restaurantsContainer = document.querySelector(".restaurantsContainer");
+const burgerButton = document.querySelector(".classButton");
+const nbRestaurants = document.querySelector(".nbRestaurants");
+const listBurger = document.querySelector(".menu-burger");
+const veggieBtn = document.querySelector("#végétarienBtn");
+const asianBtn = document.querySelector("#asiatiqueBtn");
+const burgerBtn = document.querySelector("#burgerBtn");
+const halalBtn = document.querySelector("#halalBtn");
+const filterButtons = document.querySelectorAll(".filterBtn");
+const resetBtn = document.querySelector(".resetBtn");
+
+// Code used for the burger menu
+burgerButton.addEventListener("click", () => {
+  const newImage = document.querySelector(".imagebutton");
+  listBurger.classList.toggle("open");
+  newImage.src = newImage.src.includes("img/icons8-menu-64.png")
+    ? "img/icons8-croix-50.png"
+    : "img/icons8-menu-64.png";
+});
 
 // The function that creates a restaurant card based on a restaurant of our array
 const createRestaurantCard = (restaurant) => {
@@ -31,6 +48,7 @@ const createRestaurantCard = (restaurant) => {
   const restaurantBtn = document.createElement("button");
   restaurantBtn.innerHTML = `<a href="${restaurant.website}" target="_blank">Voir le site web</a>`;
   restaurantCard.appendChild(restaurantBtn);
+  resetBtn.classList.add("active");
   return restaurantCard;
 };
 
@@ -40,86 +58,34 @@ const displayRestaurantsCards = (restaurants) => {
   restaurants.forEach((restaurant) => createRestaurantCard(restaurant));
 };
 
+// We display all the restaurants when the site is opened
 displayRestaurantsCards(restaurants);
 
-// Code used to show the number of restaurants available
-const nbRestaurants = document.querySelector(".nbRestaurants");
+//We show the number of restaurants that are listed on the page
 nbRestaurants.innerText = restaurants.length;
 
-// Code used to filter the restaurants and display only the veggie ones when the button is clicked
-const veggieRestaurants = restaurants.filter((restaurant) =>
-  restaurant.category.includes("Végétarien")
-);
-const veggieBtn = document.querySelector("#veggieBtn");
-veggieBtn.addEventListener("click", () => {
-  veggieBtn.classList.add("active");
-  asianBtn.classList.remove("active");
-  burgerBtn.classList.remove("active");
-  halalBtn.classList.remove("active");
-  nbRestaurants.innerText = veggieRestaurants.length;
-  displayRestaurantsCards(veggieRestaurants);
-});
+// Code used to filter the restaurants by category with the buttons
+const filterRestaurants = (category) => {
+  const filteredRestaurants = category
+    ? restaurants.filter((restaurant) => restaurant.category.includes(category))
+    : restaurants;
 
-// Code used to filter the restaurants and display only the asian ones when the button is clicked
-const asianRestaurants = restaurants.filter((restaurant) =>
-  restaurant.category.includes("Asiatique")
-);
-const asianBtn = document.querySelector("#asianBtn");
-asianBtn.addEventListener("click", () => {
-  asianBtn.classList.add("active");
-  veggieBtn.classList.remove("active");
-  burgerBtn.classList.remove("active");
-  halalBtn.classList.remove("active");
-  nbRestaurants.innerText = asianRestaurants.length;
-  displayRestaurantsCards(asianRestaurants);
-});
+  displayRestaurantsCards(filteredRestaurants);
 
-// Code used to filter the restaurants and display only the burger ones when the button is clicked
-const burgerRestaurants = restaurants.filter((restaurant) =>
-  restaurant.category.includes("Burger")
-);
-const burgerBtn = document.querySelector("#burgerBtn");
-burgerBtn.addEventListener("click", () => {
-  burgerBtn.classList.add("active");
-  veggieBtn.classList.remove("active");
-  asianBtn.classList.remove("active");
-  halalBtn.classList.remove("active");
-  nbRestaurants.innerText = burgerRestaurants.length;
-  displayRestaurantsCards(burgerRestaurants);
-});
+  filterButtons.forEach((btn) => btn.classList.remove("active"));
+  if (category)
+    document
+      .querySelector(`#${category.toLowerCase()}Btn`)
+      .classList.add("active");
 
-// Code used to filter the restaurants and display only the halal ones when the button is clicked
-const halalRestaurants = restaurants.filter((restaurant) =>
-  restaurant.category.includes("Halal")
-);
-const halalBtn = document.querySelector("#halalBtn");
-halalBtn.addEventListener("click", () => {
-  halalBtn.classList.add("active");
-  veggieBtn.classList.remove("active");
-  asianBtn.classList.remove("active");
-  burgerBtn.classList.remove("active");
-  nbRestaurants.innerText = halalRestaurants.length;
-  displayRestaurantsCards(halalRestaurants);
-});
+  nbRestaurants.innerText = filteredRestaurants.length;
+};
 
-// Code used to reset the filters and display all the restaurants
-const resetBtn = document.querySelector(".resetBtn");
+veggieBtn.addEventListener("click", () => filterRestaurants("Végétarien"));
+asianBtn.addEventListener("click", () => filterRestaurants("Asiatique"));
+burgerBtn.addEventListener("click", () => filterRestaurants("Burger"));
+halalBtn.addEventListener("click", () => filterRestaurants("Halal"));
 resetBtn.addEventListener("click", () => {
-  veggieBtn.classList.remove("active");
-  asianBtn.classList.remove("active");
-  burgerBtn.classList.remove("active");
-  halalBtn.classList.remove("active");
-  nbRestaurants.innerText = restaurants.length;
-  displayRestaurantsCards(restaurants);
-});
-
-const burgerButton = document.querySelector(".classButton");
-const listBurger = document.querySelector(".menu-burger");
-
-burgerButton.addEventListener("click", () => {
-  const newImage = document.querySelector(".imagebutton");
-  listBurger.classList.toggle("open");
-  newImage.src = newImage.src.includes("img/icons8-menu-64.png")
-    ? "img/icons8-croix-50.png"
-    : "img/icons8-menu-64.png";
+  filterRestaurants(null);
+  resetBtn.classList.add("active");
 });

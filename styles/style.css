@@ -166,7 +166,7 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--spacingMedium) var(--spacingSmall);
+  padding: var(--spacingLarge) var(--spacingSmall);
 
   h2 {
     margin-bottom: 1rem;
@@ -178,7 +178,7 @@ form {
   flex-direction: column;
   width: 600px;
   margin-top: 2rem;
-
+  width: clamp(300px, 100%, 600px);
   label,
   legend {
     font-weight: 600;
@@ -188,7 +188,7 @@ form {
   fieldset {
     border: 2px solid var(--black);
     border-radius: 5px;
-    padding: 4px 8px;
+    padding: 8px;
     margin-bottom: 1rem;
 
     &:focus {
@@ -196,14 +196,23 @@ form {
     }
   }
 
+  label:has(+ input:focus),
+  label:has(+ textarea:focus) {
+    color: var(--mainColor);
+  }
+
   fieldset {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   fieldset label {
     font-weight: 400;
+  }
+
+  input[type="checkbox"] {
+    accent-color: var(--mainColor);
   }
 
   button {

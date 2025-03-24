@@ -13,10 +13,18 @@ const resetBtn = document.querySelector(".resetBtn");
 burgerButton.addEventListener("click", () => {
   const newImage = document.querySelector(".imagebutton");
   listBurger.classList.toggle("open");
-  newImage.src = newImage.src.includes("img/icons8-menu-64.png")
-    ? "img/icons8-croix-50.png"
-    : "img/icons8-menu-64.png";
+  newImage.src = newImage.src.includes("assets/icons/icons8-menu-64.png")
+    ? "assets/icons/icons8-croix-50.png"
+    : "assets/icons/icons8-menu-64.png";
 });
+
+// Code used to keep the added restaurants in the storage and display the updated list
+// localStorage.clear();
+const storedRestaurants = JSON.parse(localStorage.getItem("restaurants"));
+restaurants =
+  storedRestaurants && storedRestaurants.length
+    ? storedRestaurants
+    : restaurants;
 
 // The function that creates a restaurant card based on a restaurant of our array
 const createRestaurantCard = (restaurant) => {
@@ -27,9 +35,7 @@ const createRestaurantCard = (restaurant) => {
   imgContainer.classList.add("imgContainer");
   restaurantCard.appendChild(imgContainer);
   const restaurantImg = document.createElement("img");
-  restaurantImg.src = restaurant.img
-    ? `${restaurant.img}`
-    : "img/restaurantImgPlaceholder.webp";
+  restaurantImg.src = restaurant.img || "assets/img/restaurantImgPlaceholder.webp";
   restaurantImg.alt = `Illustration du restaurant ${restaurant.name}`;
   imgContainer.appendChild(restaurantImg);
   const restaurantName = document.createElement("h4");
@@ -88,4 +94,28 @@ halalBtn.addEventListener("click", () => filterRestaurants("Halal"));
 resetBtn.addEventListener("click", () => {
   filterRestaurants(null);
   resetBtn.classList.add("active");
+});
+
+// Code used to add a restaurant to the list using the form
+const restaurantForm = document.querySelector(".restaurantForm");
+restaurantForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let restaurant = {
+    name: document.querySelector("#restaurantName").value,
+    services: [
+      ...document.querySelectorAll('input[name="restaurantServices[]"]:checked'),
+    ].map((checkbox) => checkbox.value),
+    category: [
+      ...document.querySelectorAll('input[name="restaurantCategory[]"]:checked'),
+    ].map((checkbox) => checkbox.value),
+    website: document.querySelector("#restaurantWebsite").value,
+    img: document.querySelector(
+      "#restaurantIllustration"
+    ).value,
+  };
+  restaurants.push(restaurant);
+  localStorage.setItem("restaurants", JSON.stringify(restaurants));
+  displayRestaurantsCards(restaurants);
+  nbRestaurants.innerText = restaurants.length;
+  restaurantForm.reset();
 });

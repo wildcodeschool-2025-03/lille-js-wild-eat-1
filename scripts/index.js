@@ -1,5 +1,4 @@
 const restaurantsContainer = document.querySelector(".restaurantsContainer");
-const burgerButton = document.querySelector(".classButton");
 const nbRestaurants = document.querySelector(".nbRestaurants");
 const listBurger = document.querySelector(".menu-burger");
 const veggieBtn = document.querySelector("#végétarienBtn");
@@ -8,15 +7,6 @@ const burgerBtn = document.querySelector("#burgerBtn");
 const halalBtn = document.querySelector("#halalBtn");
 const filterButtons = document.querySelectorAll(".filterBtn");
 const resetBtn = document.querySelector(".resetBtn");
-
-// Code used for the burger menu
-burgerButton.addEventListener("click", () => {
-  const newImage = document.querySelector(".imagebutton");
-  listBurger.classList.toggle("open");
-  newImage.src = newImage.src.includes("assets/icons/icons8-menu-64.png")
-    ? "assets/icons/icons8-croix-50.png"
-    : "assets/icons/icons8-menu-64.png";
-});
 
 // Code used to keep the added restaurants in the storage and display the updated list
 // localStorage.clear();

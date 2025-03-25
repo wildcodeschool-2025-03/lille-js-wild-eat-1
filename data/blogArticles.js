@@ -4,6 +4,8 @@ const blogArticles = [
     title: "Bombora : Une immersion culinaire aux saveurs du Pacifique en plein cœur de Lille",
     date: "mardi 25 mars 2025",
     img: "https://bombora.fr/wp-content/uploads/2022/09/23_menu-bdb-2-scaled.jpg",
+    isLiked : false,
+    nbLikes : 23,
     content: `Si vous cherchez une expérience gastronomique dépaysante à deux pas du campus de la Wild Code School, 
     Bombora est une adresse à ne pas manquer. Ce restaurant lillois vous embarque pour un voyage culinaire inspiré des 
     saveurs du Pacifique, entre cuisine asiatique raffinée et influences australiennes. Dès l’entrée, Bombora séduit par 
@@ -24,6 +26,8 @@ const blogArticles = [
     title: "Alexens : Une adresse gourmande et raffinée au cœur de Lille",
     date: "mardi 25 mars 2025",
     img: "https://www.alexens.com/wp-content/uploads/2020/10/Capture-d%E2%80%99%C3%A9cran-2020-09-02-%C3%A0-10.18.03.png",
+    isLiked : false,
+    nbLikes : 17,
     content:`Envie d’une pause gastronomique alliant finesse et convivialité à quelques minutes du campus de la Wild Code School ? 
     Le restaurant Alexens, situé en plein cœur de Lille, propose une cuisine bistronomique qui séduira les amateurs de saveurs raffinées 
     et de produits de qualité. Dès votre arrivée chez Alexens, vous serez charmé par son cadre élégant et cosy. La décoration, mêlant 
@@ -45,6 +49,8 @@ const blogArticles = [
     title: "Marta : Une expérience italienne authentique en plein cœur de Lille",
     date: "mardi 25 mars 2025",
     img: "https://www.martabarrestaurant.com/i/marta-683789/3/5/7/0/5/7/1/5/0/8/9/3/6/1729264498_147/4a8692f4472b8d33937af26d7c76705c.jpg",
+    isLiked : false,
+    nbLikes : 32,
     content:`Si vous êtes à la recherche d’un restaurant alliant saveurs italiennes et ambiance chaleureuse près du campus de la Wild 
     Code School, Marta est l’adresse qu’il vous faut. Ce restaurant lillois propose une cuisine généreuse et raffinée, mettant à l’honneur 
     des produits frais et des recettes authentiques venues tout droit d’Italie. Dès votre arrivée chez Marta, vous serez séduit par son 

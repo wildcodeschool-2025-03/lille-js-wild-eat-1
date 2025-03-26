@@ -313,10 +313,6 @@ form {
     color: var(--mainColor);
     margin-bottom: 0.5rem;
   }
-  p:first-of-type {
-    margin-bottom: 1rem;
-    font-style: italic;
-  }
 
   .likeSection {
     height: fit-content;
@@ -351,6 +347,34 @@ form {
   background: var(--mainColor);
   color: var(--white);
   font-weight: 600;
+}
+
+.commentContainer {
+  margin-top: 1.5rem;
+  border: 2px solid var(--white);
+  border-radius: 5px;
+}
+
+.commentElement {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  background: rgba(9, 154, 87, 0.15);
+
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.commentElement:nth-child(2n) {
+  background: rgba(9, 154, 87, 0.05);
+}
+
+.commentName {
+  font-weight: 600;
+}
+
+.commentText {
+  font-style: italic;
 }
 
 .banner {

@@ -22,6 +22,7 @@ const createBlogArticle = (article) => {
   articleContent.innerHTML = `${article.content}`;
   articleCard.appendChild(articleContent);
   articleCard.appendChild(createLikeSection(article));
+  articleCard.appendChild(createCommentSection(article));
   return articleCard;
 };
 
@@ -49,6 +50,34 @@ const createLikeSection = (article) => {
     }
   });
   return likeSection;
+};
+
+const createCommentSection = (article) => {
+  const commentSection = document.createElement("div");
+  commentSection.classList.add("commentSection");
+  const commentContainer = document.createElement("ul");
+  commentContainer.classList.add("commentContainer");
+  article.comments.forEach((comments) => {
+    const commentElement = document.createElement("li");
+    commentElement.classList.add("commentElement");
+    const commentAuthor = document.createElement("div");
+    commentAuthor.classList.add("commentAuthor");
+    const commentAvatar = document.createElement("img");
+    commentAvatar.src = `${comments.avatar}`;
+    const commentName = document.createElement("p");
+    commentName.classList.add("commentName");
+    commentName.innerText = `${comments.author}`;
+    commentAuthor.appendChild(commentAvatar);
+    commentAuthor.appendChild(commentName);
+    const commentText = document.createElement("p");
+    commentText.classList.add("commentText");
+    commentText.innerText = `"${comments.comment}"`;
+    commentElement.appendChild(commentAuthor);
+    commentElement.appendChild(commentText);
+    commentContainer.appendChild(commentElement);
+  });
+  commentSection.appendChild(commentContainer);
+  return commentSection;
 };
 
 // The function that displays automatically all the article cards

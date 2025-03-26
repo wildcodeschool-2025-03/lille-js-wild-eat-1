@@ -10,7 +10,7 @@
   --spacingLarge: 4rem;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -30,6 +30,10 @@ h6 {
   font-style: italic;
 }
 
+.green {
+  color: var(--mainColor);
+}
+
 .container {
   padding: var(--spacingMedium);
   min-height: 100vh;
@@ -43,12 +47,14 @@ h6 {
   );
 }
 
-.filterSection {
+.filterSection,
+.blogIntro {
   display: flex;
   flex-direction: column;
 }
 
-.filterSection h2 {
+.filterSection h2,
+.blogIntro h2 {
   text-align: center;
   color: var(--mainColor);
   font-size: 3rem;
@@ -56,10 +62,13 @@ h6 {
   margin-bottom: var(--spacingMedium);
 }
 
-.filterSection p {
+.filterSection p,
+.blogIntro p {
   text-align: center;
   margin-bottom: var(--spacingSmall);
   font-size: 1.2rem;
+  max-width: 85ch;
+  margin: 0 auto 2rem;
 }
 
 .filterList {
@@ -92,7 +101,8 @@ h6 {
   color: var(--white);
 }
 
-.restaurantsSection h3 {
+.restaurantsSection h3,
+.articlesSection h3 {
   text-align: center;
   margin-top: var(--spacingMedium);
 }
@@ -235,6 +245,52 @@ form {
     &:hover {
       background: transparent;
       color: var(--mainColor);
+    }
+  }
+}
+
+.articlesContainer {
+  padding: var(--spacingMedium) var(--spacingSmall);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacingSmall);
+}
+
+.articleCard {
+  width: clamp(300px, 100%, 900px);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: var(--spacingMedium) var(--spacingSmall) var(--spacingSmall);
+  border: 2px solid var(--black);
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+
+  .articleImgContainer {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: var(--spacingSmall);
+  }
+  h4 {
+    font-size: 1.3rem;
+    font-family: var(--titleFont);
+    color: var(--mainColor);
+    margin-bottom: 0.5rem;
+  }
+  p:first-of-type {
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .likeSection {
+    margin: 8px 0 0 0;
+
+    .fa-thumbs-up {
+      color: var(--black);
+      transition: 0.3s ease;
+      cursor: pointer;
     }
   }
 }

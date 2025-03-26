@@ -1,5 +1,5 @@
 // Code used for the burger menu
-
+const listBurger = document.querySelector(".menu-burger");
 const burgerButton = document.querySelector(".classButton");
 
 burgerButton.addEventListener("click", () => {

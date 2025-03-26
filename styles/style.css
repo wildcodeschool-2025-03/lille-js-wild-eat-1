@@ -30,10 +30,6 @@ h6 {
   font-style: italic;
 }
 
-.green {
-  color: var(--mainColor);
-}
-
 .container {
   padding: var(--spacingMedium);
   min-height: 100vh;
@@ -285,14 +281,23 @@ form {
   }
 
   .likeSection {
-    margin: 8px 0 0 0;
-
-    .fa-thumbs-up {
-      color: var(--black);
-      transition: 0.3s ease;
-      cursor: pointer;
-    }
+    height: 16px;
+    margin-top: 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
   }
+}
+
+.fa-thumbs-up {
+  font-weight: 900;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.likeBtn.green {
+  color: var(--mainColor);
 }
 
 @media screen and (max-width: 547px) {

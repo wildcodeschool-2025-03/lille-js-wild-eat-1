@@ -21,11 +21,34 @@ const createBlogArticle = (article) => {
   const articleContent = document.createElement("p");
   articleContent.innerHTML = `${article.content}`;
   articleCard.appendChild(articleContent);
-  const likeSection = document.createElement("p");
-  likeSection.innerHTML = `<i class="fa-regular fa-thumbs-up likeBtn"></i> ${article.nbLikes} likes`;
-  likeSection.classList.add("likeSection");
-  articleCard.appendChild(likeSection);
+  articleCard.appendChild(createLikeSection(article));
   return articleCard;
+};
+
+const createLikeSection = (article) => {
+  const likeSection = document.createElement("div");
+  likeSection.classList.add("likeSection");
+  const likeBtn = document.createElement("button");
+  likeBtn.classList.add("likeBtn");
+  likeBtn.innerHTML = `<i class="fa-solid fa-thumbs-up"></i>`;
+  likeSection.appendChild(likeBtn);
+  const likesCounter = document.createElement("p");
+  likesCounter.innerText = `${article.nbLikes} likes`;
+  likeSection.appendChild(likesCounter);
+  likeBtn.addEventListener("click", () => {
+    if (article.isLiked === false) {
+      article.nbLikes += 1;
+      likesCounter.innerText = `${article.nbLikes} likes`;
+      likeBtn.classList.add("green");
+      article.isLiked = true;
+    } else {
+      article.nbLikes -= 1;
+      likesCounter.innerText = `${article.nbLikes} likes`;
+      likeBtn.classList.remove("green");
+      article.isLiked = false;
+    }
+  });
+  return likeSection;
 };
 
 // The function that displays automatically all the article cards

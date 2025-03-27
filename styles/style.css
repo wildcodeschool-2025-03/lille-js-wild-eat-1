@@ -260,7 +260,8 @@ form {
     font-weight: 600;
     transition: 0.3s ease-in-out;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: transparent;
       color: var(--mainColor);
     }
@@ -375,7 +376,7 @@ form {
 
 .commentAuthor {
   width: 100px;
-  padding: 0 1rem;
+  padding-left: 1rem;
 }
 
 .commentName {
@@ -384,6 +385,7 @@ form {
 
 .commentText {
   font-style: italic;
+  width: 100%;
 }
 
 .commentForm {

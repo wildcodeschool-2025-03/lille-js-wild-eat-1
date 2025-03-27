@@ -314,6 +314,11 @@ form {
     margin-bottom: 0.5rem;
   }
 
+  .articleDate {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
   .likeSection {
     height: fit-content;
     margin: 0.75rem 0 -1rem;
@@ -360,7 +365,6 @@ form {
   gap: 2rem;
   align-items: center;
   background: rgba(9, 154, 87, 0.15);
-
   padding: 1rem;
   border-radius: 5px;
 }
@@ -369,12 +373,34 @@ form {
   background: rgba(9, 154, 87, 0.05);
 }
 
+.commentAuthor {
+  width: 100px;
+  padding: 0 1rem;
+}
+
 .commentName {
   font-weight: 600;
 }
 
 .commentText {
   font-style: italic;
+}
+
+.commentForm {
+  border: none;
+  padding: 0.5rem;
+  margin: 1rem auto 0;
+
+  textarea {
+    border: 2px solid var(--black);
+    height: 100px;
+    resize: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    &:focus {
+      border: 2px solid var(--mainColor);
+    }
+  }
 }
 
 .banner {

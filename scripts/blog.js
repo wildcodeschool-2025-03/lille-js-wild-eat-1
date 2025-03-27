@@ -88,11 +88,13 @@ const createCommentInput = (article) => {
   const commentInputName = document.createElement("input");
   commentInputName.placeholder = "Votre nom";
   commentInputName.classList.add("commentInputName");
+  commentInputName.setAttribute("id", "name");
   commentInputName.required = true;
   commentForm.appendChild(commentInputName);
   const commentInputContent = document.createElement("textarea");
   commentInputContent.placeholder = "Votre commentaire";
   commentInputContent.classList.add("commentInputContent");
+  commentInputContent.setAttribute("id", "commentMsg");
   commentInputContent.required = true;
   commentForm.appendChild(commentInputContent);
   const commentBtn = document.createElement("button");

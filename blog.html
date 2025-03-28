@@ -1,91 +1,109 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Wild Eats</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles/reset.css" />
-  <link rel="stylesheet" href="styles/style.css" />
-  <title>Wild Eats</title>
-</head>
+  <body>
+    <header class="banner">
+      <nav class="navBar" id="navBar">
+        <button class="classButton">
+          <img
+            class="imagebutton"
+            src="assets/icons/icons8-menu-64.png"
+            alt="bouton burger"
+          />
+        </button>
+        <ul class="menu-burger" id="menu-burger">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#formSection">Ajouter un restaurant</a></li>
+        </ul>
+      </nav>
+      <h1>Wild Eats</h1>
+    </header>
+    <main class="container">
+      <section class="blogIntro">
+        <h2>Le blog Wild Eats</h2>
+        <p>
+          Tu cherches de bonnes adresses pour déjeuner ou dîner autour du campus
+          de la Wild Code School à Lille ? <br /><br />
+          Tu es au bon endroit ! Wild Eats recense les meilleurs restaurants du
+          quartier, qu’ils soient parfaits pour une pause rapide entre deux
+          cours, un repas convivial entre amis ou une découverte culinaire plus
+          raffinée. <br /><br />
+          Retrouve ici des articles sur nos coups de cœur gastronomiques, des
+          recommandations et des avis détaillés pour t'aider à faire ton choix.
+          Que tu sois amateur de cuisine traditionnelle, de saveurs exotiques ou
+          de street food gourmande, il y en a pour tous les goûts ! Bonne
+          lecture et bon appétit !
+        </p>
 
-<body>
-
-  <header class="banner">
-    <nav class="navBar" id="navBar">
-      <button class="classButton">
-        <img class="imagebutton" src="assets/icons/icons8-menu-64.png" alt="bouton burger" />
-      </button>
-      <ul class="menu-burger" id="menu-burger">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="index.html#formSection">Ajouter un restaurant</a></li>
+        <div class="input-control">
+          <label for="search">
+            <img src="/assets/icons/Icon loupe.png" alt="loupe" />
+          </label>
+          <input
+            type="text"
+            id="search"
+            placeholder="Rechercher un article"
+            onchange="searchArticles()"
+          />
+        </div>
+      </section>
+      <section class="articlesSection">
+        <h3>Derniers articles</h3>
+        <ul class="articlesContainer"></ul>
+      </section>
+    </main>
+    <footer class="footerClass">
+      <ul>
+        <li>
+          <a
+            href="https://www.facebook.com/photo/?fbid=732115145586528&set=a.732115132253196&locale=fr_FR"
+            target="_blank"
+          >
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/school/wild-code-school/people/?originalSubdomain=fr"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/wildcodeschoolofficial/"
+            target="_blank"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
       </ul>
-    </nav>
-    <h1>Wild Eats</h1>
-  </header>
-  <main class="container">
-    <section class="blogIntro">
-      <h2>Le blog Wild Eats</h2>
-      <p>
-        Tu cherches de bonnes adresses pour déjeuner ou dîner autour du campus
-        de la Wild Code School à Lille ? <br /><br />
-        Tu es au bon endroit ! Wild Eats recense les meilleurs restaurants du
-        quartier, qu’ils soient parfaits pour une pause rapide entre deux
-        cours, un repas convivial entre amis ou une découverte culinaire plus
-        raffinée. <br /><br />
-        Retrouve ici des articles sur nos coups de cœur gastronomiques, des
-        recommandations et des avis détaillés pour t'aider à faire ton choix.
-        Que tu sois amateur de cuisine traditionnelle, de saveurs exotiques ou
-        de street food gourmande, il y en a pour tous les goûts ! Bonne
-        lecture et bon appétit !
-      </p>
-
-      <div class="input-control">
-        <label for="search">
-          <img src="/assets/icons/Icon loupe.png" alt="loupe">
-        </label>
-        <input type="text" id="search" placeholder="Rechercher un article" onchange="searchArticles()">
-      </div>
-    </section>
-    <section class="articlesSection">
-      <h3>Derniers articles</h3>
-      <ul class="articlesContainer"></ul>
-    </section>
-  </main>
-  <footer class="footerClass">
-    <ul>
-      <li>
-        <a href="https://www.linkedin.com/school/wild-code-school/people/?originalSubdomain=fr" target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.facebook.com/photo/?fbid=732115145586528&set=a.732115132253196&locale=fr_FR"
-          target="_blank">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/wildcodeschoolofficial/" target="_blank">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-      </li>
-    </ul>
-    <p>Copyright 2025 - Wild Eats</p>
-  </footer>
-  <script src="data/blogArticles.js"></script>
-  <script src="scripts/burgerBtn.js"></script>
-  <script src="scripts/blog.js"></script>
-  <script src="scripts/searchBar.js"></script>
-
-</body>
-
+      <p>Copyright 2025 - Wild Eats</p>
+    </footer>
+    <script src="data/blogArticles.js"></script>
+    <script src="scripts/burgerBtn.js"></script>
+    <script src="scripts/blog.js"></script>
+    <script src="scripts/searchBar.js"></script>
+  </body>
 </html>

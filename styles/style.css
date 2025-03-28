@@ -17,6 +17,7 @@ html {
 body {
   font-family: var(--textFont);
 }
+
 h1,
 h2,
 h3,
@@ -140,6 +141,7 @@ h6 {
       min-width: 100%;
       min-height: 100%;
       transition: 0.3s ease-in-out;
+
       &:hover {
         transform: scale(1.1);
       }
@@ -308,6 +310,7 @@ form {
     justify-content: center;
     align-items: center;
   }
+
   h4 {
     font-size: 1.3rem;
     font-family: var(--titleFont);
@@ -435,6 +438,7 @@ form {
   list-style: none;
   padding: 0;
   margin: 0;
+  transition: 1s;
 }
 
 .menu-burger li a {
@@ -461,7 +465,7 @@ form {
 
 .footerClass ul {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -469,10 +473,10 @@ form {
   left: 20px;
 }
 
-.footerClass img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+.footerClass i {
+  width: 4vh;
+  height: 4vh;
+  margin-top: 8px;
   object-fit: cover;
 }
 
@@ -483,6 +487,39 @@ form {
   text-align: center;
   margin: 0 auto;
 }
+
+.input-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.input-control input {
+  width: 50%;
+  font-family: var(--textFont);
+  font-size: 16px;
+  padding: 10px;
+  outline: 0;
+  border: 0;
+  border-radius: 20px;
+  color: var(--mainColor);
+  background-color: aliceblue;
+  box-shadow: 5px 5px 5px 0.1px var(--mainColor);
+}
+
+.input-control input::placeholder {
+  color: var(--mainColor);
+  font-size: 16px;
+  font-family: var(--textFont);
+}
+
+.input-control img {
+  width: 30px;
+  margin: 10px;
+  padding-top: 2px;
+}
+
 
 /* MEDIA QUERIES POUR MOBILE */
 @media screen and (max-width: 600px) {
@@ -546,9 +583,9 @@ form {
     margin: auto;
   }
 
-  .footerClass img {
-    width: 6vh;
-    height: 6vh;
+  .footerClass i {
+    width: 4vh;
+    height: 4vh;
   }
 
   .footerClass p {

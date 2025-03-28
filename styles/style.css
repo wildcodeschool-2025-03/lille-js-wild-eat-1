@@ -17,6 +17,7 @@ html {
 body {
   font-family: var(--textFont);
 }
+
 h1,
 h2,
 h3,
@@ -39,12 +40,10 @@ h6 {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(
-    to bottom right,
-    rgba(9, 154, 87, 0.15),
-    #fff,
-    rgba(9, 154, 87, 0.15)
-  );
+  background: linear-gradient(to bottom right,
+      rgba(9, 154, 87, 0.15),
+      #fff,
+      rgba(9, 154, 87, 0.15));
 }
 
 .filterSection,
@@ -135,6 +134,7 @@ h6 {
       min-width: 100%;
       min-height: 100%;
       transition: 0.3s ease-in-out;
+
       &:hover {
         transform: scale(1.1);
       }
@@ -193,6 +193,7 @@ form {
   width: 600px;
   margin-top: 2rem;
   width: clamp(300px, 100%, 600px);
+
   label,
   legend {
     font-weight: 600;
@@ -273,12 +274,14 @@ form {
     border-radius: 5px;
     margin-bottom: var(--spacingSmall);
   }
+
   h4 {
     font-size: 1.3rem;
     font-family: var(--titleFont);
     color: var(--mainColor);
     margin-bottom: 0.5rem;
   }
+
   p:first-of-type {
     margin-bottom: 1rem;
     font-style: italic;
@@ -294,6 +297,7 @@ form {
     }
   }
 }
+
 
 @media screen and (max-width: 547px) {
   .container {
@@ -331,6 +335,7 @@ form {
   list-style: none;
   padding: 0;
   margin: 0;
+  transition: 1s;
 }
 
 .menu-burger li a {
@@ -357,7 +362,7 @@ form {
 
 .footerClass ul {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -365,10 +370,10 @@ form {
   left: 20px;
 }
 
-.footerClass img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+.footerClass i {
+  width: 4vh;
+  height: 4vh;
+  margin-top: 8px;
   object-fit: cover;
 }
 
@@ -379,6 +384,39 @@ form {
   text-align: center;
   margin: 0 auto;
 }
+
+.input-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.input-control input {
+  width: 50%;
+  font-family: var(--textFont);
+  font-size: 16px;
+  padding: 10px;
+  outline: 0;
+  border: 0;
+  border-radius: 20px;
+  color: var(--mainColor);
+  background-color: aliceblue;
+  box-shadow: 5px 5px 5px 0.1px var(--mainColor);
+}
+
+.input-control input::placeholder {
+  color: var(--mainColor);
+  font-size: 16px;
+  font-family: var(--textFont);
+}
+
+.input-control img {
+  width: 30px;
+  margin: 10px;
+  padding-top: 2px;
+}
+
 
 /* MEDIA QUERIES POUR MOBILE */
 @media screen and (max-width: 600px) {
@@ -444,9 +482,9 @@ form {
     margin: auto;
   }
 
-  .footerClass img {
-    width: 6vh;
-    height: 6vh;
+  .footerClass i {
+    width: 4vh;
+    height: 4vh;
   }
 
   .footerClass p {

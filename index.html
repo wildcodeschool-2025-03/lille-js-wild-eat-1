@@ -1,188 +1,138 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <title>Wild Eats</title>
-  </head>
-  <body>
-    <header class="banner">
-      <nav class="navBar" id="navBar">
-        <button class="classButton">
-          <img
-            class="imagebutton"
-            src="assets/icons/icons8-menu-64.png"
-            alt="bouton burger"
-          />
-        </button>
-        <ul class="menu-burger" id="menu-burger">
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="#formSection">Ajouter un restaurant</a></li>
-        </ul>
-      </nav>
-      <h1>Wild Eats</h1>
-    </header>
-    <main class="container">
-      <section class="filterSection">
-        <h2>Où vas-tu manger ce midi?</h2>
-        <p>
-          Tu cherches de bonnes adresses pour déjeuner ou dîner autour du campus de la Wild Code School à Lille ? Tu es au bon endroit ! 
-          Wild Eats recense les meilleurs restaurants du quartier, qu’ils soient parfaits pour une pause rapide entre deux cours, un repas 
-          convivial entre amis ou une découverte culinaire plus raffinée.
-        </p>
-        <ul class="filterList">
-          <li>
-            <button class="filterBtn resetBtn">Tous restaurants</button>
-          </li>
-          <li>
-            <button class="filterBtn" id="végétarienBtn">Végétarien</button>
-          </li>
-          <li>
-            <button class="filterBtn" id="asiatiqueBtn">Asiatique</button>
-          </li>
-          <li><button class="filterBtn" id="burgerBtn">Burger</button></li>
-          <li><button class="filterBtn" id="halalBtn">Halal</button></li>
-        </ul>
-      </section>
-      <section class="restaurantsSection">
-        <h3>Restaurants disponibles : <span class="nbRestaurants"></span></h3>
-        <ul class="restaurantsContainer"></ul>
-      </section>
-      <section class="formSection" id="formSection">
-        <h2>Ajouter un restaurant</h2>
-        <p>
-          Ton restaurant préféré n'est pas dans notre base de données? Ajoute le
-          en remplissant ce formulaire:
-        </p>
-        <form action="post" class="restaurantForm">
-          <label for="restaurantName">Nom du restaurant :</label>
-          <input
-            type="text"
-            id="restaurantName"
-            name="restaurantName"
-            placeholder="Nom du restaurant"
-          />
-          <fieldset>
-            <legend>Services du restaurant :</legend>
-            <label>
-              <input
-                type="checkbox"
-                name="restaurantServices[]"
-                value="Sur place"
-              />
-              Sur place
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="restaurantServices[]"
-                value="Livraison"
-              />
-              Livraison
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="restaurantServices[]"
-                value="A emporter"
-              />
-              A emporter
-            </label>
-          </fieldset>
-          <fieldset>
-            <legend>Catégorie du restaurant :</legend>
-            <label>
-              <input
-                type="checkbox"
-                name="restaurantCategory[]"
-                value="Végétarien"
-              />
-              Végétarien
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="restaurantCategory[]"
-                value="Asiatique"
-              />
-              Asiatique
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="restaurantCategory[]"
-                value="Burger"
-              />
-              Burger
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="restaurantCategory[]"
-                value="Halal"
-              />
-              Halal
-            </label>
-          </fieldset>
-          <label for="restaurantWebsite">Site web du restaurant :</label>
-          <input
-            type="url"
-            id="restaurantWebsite"
-            name="restaurantWebsite"
-            placeholder="https://exemple.com"
-          />
-          <label for="restaurantIllustration"
-            >Illustration du restaurant :</label
-          >
-          <input
-            type="url"
-            id="restaurantIllustration"
-            name="restaurantIllustration"
-            placeholder="URL de l'image"
-          />
-          <button type="submit">Ajouter le restaurant</button>
-        </form>
-      </section>
-    </main>
-    <footer class="footerClass">
-      <ul>
-        <li>
-          <a
-            href="https://www.linkedin.com/school/wild-code-school/people/?originalSubdomain=fr"
-            target="_blank"
-          >
-            <img src="assets/icons/linkedin-3000959_640.png" alt="LinkedIn" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.facebook.com/photo/?fbid=732115145586528&set=a.732115132253196&locale=fr_FR"
-            target="_blank"
-          >
-            <img src="assets/icons/facebook-3000954_640.png" alt="Facebook" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.instagram.com/wildcodeschoolofficial/"
-            target="_blank"
-          >
-            <img src="assets/icons/instagram-1581266_640.jpg" alt="Instagram" />
-          </a>
-        </li>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <title>Wild Eats</title>
+</head>
+
+<body>
+  <header class="banner">
+    <nav class="navBar" id="navBar">
+      <button class="classButton">
+        <img class="imagebutton" src="assets/icons/icons8-menu-64.png" alt="bouton burger" />
+      </button>
+      <ul class="menu-burger" id="menu-burger">
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#formSection">Ajouter un restaurant</a></li>
       </ul>
-      <p>Copyright 2025 - Wild Eats</p>
-    </footer>
-    <script src="data/restaurants.js"></script>
-    <script src="scripts/burgerBtn.js"></script>
-    <script src="scripts/index.js"></script>
-  </body>
+    </nav>
+    <h1>Wild Eats</h1>
+  </header>
+  <main class="container">
+    <section class="filterSection">
+      <h2>Où vas-tu manger ce midi?</h2>
+      <p>
+        Tu cherches de bonnes adresses pour déjeuner ou dîner autour du campus de la Wild Code School à Lille ? Tu es au
+        bon endroit !
+        Wild Eats recense les meilleurs restaurants du quartier, qu’ils soient parfaits pour une pause rapide entre deux
+        cours, un repas
+        convivial entre amis ou une découverte culinaire plus raffinée.
+      </p>
+      <ul class="filterList">
+        <li>
+          <button class="filterBtn resetBtn">Tous restaurants</button>
+        </li>
+        <li>
+          <button class="filterBtn" id="végétarienBtn">Végétarien</button>
+        </li>
+        <li>
+          <button class="filterBtn" id="asiatiqueBtn">Asiatique</button>
+        </li>
+        <li><button class="filterBtn" id="burgerBtn">Burger</button></li>
+        <li><button class="filterBtn" id="halalBtn">Halal</button></li>
+      </ul>
+    </section>
+    <section class="restaurantsSection">
+      <h3>Restaurants disponibles : <span class="nbRestaurants"></span></h3>
+      <ul class="restaurantsContainer"></ul>
+    </section>
+    <section class="formSection" id="formSection">
+      <h2>Ajouter un restaurant</h2>
+      <p>
+        Ton restaurant préféré n'est pas dans notre base de données? Ajoute le
+        en remplissant ce formulaire:
+      </p>
+      <form action="post" class="restaurantForm">
+        <label for="restaurantName">Nom du restaurant :</label>
+        <input type="text" id="restaurantName" name="restaurantName" placeholder="Nom du restaurant" />
+        <fieldset>
+          <legend>Services du restaurant :</legend>
+          <label>
+            <input type="checkbox" name="restaurantServices[]" value="Sur place" />
+            Sur place
+          </label>
+          <label>
+            <input type="checkbox" name="restaurantServices[]" value="Livraison" />
+            Livraison
+          </label>
+          <label>
+            <input type="checkbox" name="restaurantServices[]" value="A emporter" />
+            A emporter
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Catégorie du restaurant :</legend>
+          <label>
+            <input type="checkbox" name="restaurantCategory[]" value="Végétarien" />
+            Végétarien
+          </label>
+          <label>
+            <input type="checkbox" name="restaurantCategory[]" value="Asiatique" />
+            Asiatique
+          </label>
+          <label>
+            <input type="checkbox" name="restaurantCategory[]" value="Burger" />
+            Burger
+          </label>
+          <label>
+            <input type="checkbox" name="restaurantCategory[]" value="Halal" />
+            Halal
+          </label>
+        </fieldset>
+        <label for="restaurantWebsite">Site web du restaurant :</label>
+        <input type="url" id="restaurantWebsite" name="restaurantWebsite" placeholder="https://exemple.com" />
+        <label for="restaurantIllustration">Illustration du restaurant :</label>
+        <input type="url" id="restaurantIllustration" name="restaurantIllustration" placeholder="URL de l'image" />
+        <button type="submit">Ajouter le restaurant</button>
+      </form>
+    </section>
+  </main>
+  <footer class="footerClass">
+    <ul>
+      <li>
+        <a href="https://www.linkedin.com/school/wild-code-school/people/?originalSubdomain=fr" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/photo/?fbid=732115145586528&set=a.732115132253196&locale=fr_FR"
+          target="_blank">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/wildcodeschoolofficial/" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </li>
+    </ul>
+    <p>Copyright 2025 - Wild Eats</p>
+  </footer>
+  <script src="data/restaurants.js"></script>
+  <script src="scripts/burgerBtn.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+
 </html>

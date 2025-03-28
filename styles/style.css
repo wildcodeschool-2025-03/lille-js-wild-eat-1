@@ -280,6 +280,7 @@ form {
 
   h3 {
     font-size: 1.5rem;
+    margin-top: 0;
   }
 }
 
@@ -493,6 +494,7 @@ form {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  margin-top: 1rem;
 }
 
 .input-control input {
@@ -520,7 +522,6 @@ form {
   padding-top: 2px;
 }
 
-
 /* MEDIA QUERIES POUR MOBILE */
 @media screen and (max-width: 600px) {
   /* NAVBAR MOBILE */
@@ -544,8 +545,11 @@ form {
     border: 2px solid var(--white);
     border-radius: 5px;
     top: 65px;
-    width: 150px;
-    left: -150px;
+    width: 210px;
+    height: 200px;
+    left: -210px;
+    justify-content: center;
+    gap: 40px;
   }
 
   .open {
@@ -569,6 +573,18 @@ form {
     padding-bottom: 0;
   }
 
+  .formSection h2 {
+    text-align: center;
+  }
+
+  .restaurantForm fieldset label {
+    text-align: center;
+  }
+
+  .input-control input {
+    width: 100%;
+  }
+
   .footerClass {
     display: flex;
     flex-direction: column;
@@ -589,7 +605,7 @@ form {
   }
 
   .footerClass p {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     margin-top: 10px;
   }
 }
@@ -620,11 +636,32 @@ form {
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
+    height: 100px;
   }
 
   .footerClass ul {
     justify-content: flex-start;
+    align-items: baseline;
     margin-bottom: 0;
+    gap: 20px;
+  }
+
+  .footerClass ul li {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .fa-linkedin {
+    font-size: 1.5rem;
+  }
+
+  .fa-square-facebook {
+    font-size: 1.5rem;
+  }
+
+  .fa-instagram {
+    font-size: 1.5rem;
   }
 
   .footerClass p {

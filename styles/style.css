@@ -31,25 +31,22 @@ h6 {
   font-style: italic;
 }
 
-.green {
-  color: var(--mainColor);
-}
-
 .container {
-  padding: var(--spacingMedium);
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom right,
-      rgba(9, 154, 87, 0.15),
-      #fff,
-      rgba(9, 154, 87, 0.15));
 }
 
 .filterSection,
 .blogIntro {
   display: flex;
   flex-direction: column;
+  padding: var(--spacingLarge) var(--spacingMedium) var(--spacingMedium);
+  background: linear-gradient(
+    to bottom right,
+    rgba(9, 154, 87, 0.15),
+    #fff,
+    rgba(9, 154, 87, 0.15)
+  );
 }
 
 .filterSection h2,
@@ -100,6 +97,16 @@ h6 {
   color: var(--white);
 }
 
+.restaurantsSection {
+  padding: 0 var(--spacingMedium) var(--spacingLarge);
+  background: linear-gradient(
+    to bottom left,
+    rgba(9, 154, 87, 0.15),
+    #fff,
+    rgba(9, 154, 87, 0.15)
+  );
+}
+
 .restaurantsSection h3,
 .articlesSection h3 {
   text-align: center;
@@ -111,7 +118,7 @@ h6 {
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--spacingSmall);
-  padding-top: var(--spacingMedium);
+  padding: var(--spacingMedium) 0 0;
 }
 
 .restaurantCard {
@@ -180,10 +187,18 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--spacingLarge) var(--spacingSmall);
+  padding: var(--spacingLarge) var(--spacingMedium);
+  background: linear-gradient(
+    to bottom right,
+    rgba(9, 154, 87, 0.15),
+    #fff,
+    rgba(9, 154, 87, 0.15)
+  );
 
   h2 {
     margin-bottom: 1rem;
+    color: var(--mainColor);
+    font-size: 2rem;
   }
 }
 
@@ -193,6 +208,10 @@ form {
   width: 600px;
   margin-top: 2rem;
   width: clamp(300px, 100%, 600px);
+  padding: var(--spacingSmall);
+  border: 2px solid var(--mainColor);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
 
   label,
   legend {
@@ -243,10 +262,24 @@ form {
     font-weight: 600;
     transition: 0.3s ease-in-out;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: transparent;
       color: var(--mainColor);
     }
+  }
+}
+
+.articlesSection {
+  background: linear-gradient(
+    to bottom left,
+    rgba(9, 154, 87, 0.15),
+    #fff,
+    rgba(9, 154, 87, 0.15)
+  );
+
+  h3 {
+    font-size: 1.5rem;
   }
 }
 
@@ -262,17 +295,20 @@ form {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: var(--spacingMedium) var(--spacingSmall) var(--spacingSmall);
+  padding: var(--spacingSmall);
   border: 2px solid var(--black);
   background: rgba(255, 255, 255, 0.3);
   border-radius: 5px;
 
   .articleImgContainer {
     width: 100%;
-    height: 300px;
+    max-height: 300px;
     overflow: hidden;
     border-radius: 5px;
     margin-bottom: var(--spacingSmall);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   h4 {
@@ -282,26 +318,93 @@ form {
     margin-bottom: 0.5rem;
   }
 
-  p:first-of-type {
-    margin-bottom: 1rem;
+  .articleDate {
     font-style: italic;
+    margin-bottom: 0.5rem;
   }
 
   .likeSection {
-    margin: 8px 0 0 0;
-
-    .fa-thumbs-up {
-      color: var(--black);
-      transition: 0.3s ease;
-      cursor: pointer;
-    }
+    height: fit-content;
+    margin: 0.75rem 0 -1rem;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    font-style: normal;
   }
 }
 
+.likeBtn {
+  background: var(--white);
+  color: var(--black);
+  padding: 4px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
 
-@media screen and (max-width: 547px) {
-  .container {
-    padding: var(--spacingMedium) var(--spacingSmall);
+.likeBtn i {
+  font-weight: 500;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.likeBtn i:hover {
+  transform: scale(1.1);
+}
+
+.likeBtn.green {
+  background: var(--mainColor);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.commentContainer {
+  margin-top: 1.5rem;
+  border: 2px solid var(--white);
+  border-radius: 5px;
+}
+
+.commentElement {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  background: rgba(9, 154, 87, 0.15);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.commentElement:nth-child(2n) {
+  background: rgba(9, 154, 87, 0.05);
+}
+
+.commentAuthor {
+  width: 100px;
+  padding-left: 1rem;
+}
+
+.commentName {
+  font-weight: 600;
+}
+
+.commentText {
+  font-style: italic;
+  width: 100%;
+}
+
+.commentForm {
+  border: none;
+  padding: 0.5rem;
+  margin: 1rem auto 0;
+
+  textarea {
+    border: 2px solid var(--black);
+    height: 100px;
+    resize: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    &:focus {
+      border: 2px solid var(--mainColor);
+    }
   }
 }
 
@@ -425,7 +528,6 @@ form {
   .navBar {
     position: absolute;
     margin-right: auto;
-    /* Permet d’utiliser absolute pour le menu */
   }
 
   .classButton {
@@ -473,7 +575,6 @@ form {
     align-items: center;
     text-align: center;
     position: static;
-    /* Annule le positionnement absolu */
   }
 
   .footerClass ul {

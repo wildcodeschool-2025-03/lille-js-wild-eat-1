@@ -206,7 +206,7 @@ form {
   width: 600px;
   margin-top: 2rem;
   width: clamp(300px, 100%, 600px);
-  padding: var(--spacingMedium);
+  padding: var(--spacingSmall);
   border: 2px solid var(--mainColor);
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.3);
@@ -293,7 +293,7 @@ form {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: var(--spacingMedium) var(--spacingSmall) var(--spacingSmall);
+  padding: var(--spacingSmall);
   border: 2px solid var(--black);
   background: rgba(255, 255, 255, 0.3);
   border-radius: 5px;
